@@ -11,7 +11,7 @@ class SPIPLexer(RegexLexer):
 		'root': [
 			(r'#[A-Z_]+\*{0,2}', Keyword),			# balises
 			(r'\|[\w:]+',Name.Function),				# filtres
-			(r'\{[\s\w,!=?]+\}',Name.Attribute)		# Critères de boucles et arguments de balises ainsi que de filtres
+			(r'\{[#\s\w,!=?]+\}',Name.Attribute)		# Critères de boucles et arguments de balises ainsi que de filtres
 		]
 		
 	}
