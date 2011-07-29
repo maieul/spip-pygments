@@ -8,13 +8,13 @@
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
-from spip import SPIPLexer
+from spip import spipLexer
 
 
 code 	= open('exemple.html','r').read()
 output 	= open('output.html','w+')
 output.write('<html><head><style>'+HtmlFormatter().get_style_defs('.highlight')+'</style></head><body>')
-highlight(code, SPIPLexer(), HtmlFormatter(),output)
+highlight(code, spipLexer(), HtmlFormatter(),output)
 
 output.write('</body></html>')
 output.close()
