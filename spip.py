@@ -19,7 +19,7 @@ class SPIPLexer(RegexLexer):
 			(r'<\/{0,2}B(OUCLE)?[\w]+>',Name.Class),					# partie optionelle des boucles et fermeture
 			(r'\{',Name.Attribute,'critere'),							#debut d'un critère
 			(r'\}',Name.Attribute),										#fin d'un critère
-			
+			(r'.',Text)													#tout ce qui se situe en dehors de boucle, filtre, critère etc.
 
 		],
 		
