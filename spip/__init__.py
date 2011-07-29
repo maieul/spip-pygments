@@ -8,7 +8,7 @@ from pygments.token import *
 
 class spipLexer(RegexLexer):
 	name = 'spip'
-	aliases = ['SPIP']
+	aliases = ['SPIP','spip']
 	filenames = ['*.html']
 	
 	tokens = {
