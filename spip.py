@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pygments.lexer import RegexLexer
 from pygments.token import *
 
