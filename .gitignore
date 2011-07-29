@@ -1,2 +1,5 @@
 output.html
 *.pyc
+dist/*
+build/*
+spip.egg*
