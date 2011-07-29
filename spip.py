@@ -8,6 +8,6 @@ class SPIPLexer(RegexLexer):
 	
 	tokens = {
 		'root': [
-			(r'#[A-Z_]+', Keyword),
+			(r'#[A-Z_]+\*{0,2}', Keyword),
 		]
 	}
