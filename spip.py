@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from pygments.lexer import RegexLexer
+from pygments.lexer import RegexLexer,bygroups
 from pygments.token import *
 
 class SPIPLexer(RegexLexer):
@@ -9,7 +9,7 @@ class SPIPLexer(RegexLexer):
 	
 	tokens = {
 		'root': [
-			
+			(r'(<BOUCLE[\w]+\([\w]+\))([\s]*\{[#\s\w,\|!=?<>:\{\}]+\}[\s]*)*(>)',bygroups(Name.Class,Name.Attribute,Name.Class)),						# ouverture de la boucle
 			
 			(r'#[A-Z_]+\*{0,2}', Keyword),								# balises
 			(r'\|[\w:]+',Name.Function),								# filtres
@@ -18,11 +18,16 @@ class SPIPLexer(RegexLexer):
 			(r'<:[\w]+(:[\w]+)?',Literal.String.Other),					# début chaine
 			(r'\{[#\s\w,!=?<>:]+\}',Name.Attribute,'recur'),			# Critères de boucles et arguments de balises ainsi que de filtres
 			(r'<\/{0,2}B(OUCLE)?[\w]+>',Name.Class),					# partie optionelle des boucles et fermeture
-			(r'<BOUCLE[\w]+\([\w]+\)([\s]*\{[#\s\w,\|!=?<>:\{\}]+\}[\s]*)*>',Name.Class),						# ouverture de la boucle
+			
 
 		],
 		
+		#'ouverture_boucle':[
+		#	(r'<BOUCLE[\w]+\([\w]+\)',Name.Class),						# debut boucle
+		#],
+		
 		'recur':[
+			
 			(r'#[A-Z_]+\*{0,2}', Keyword),								# balise
 			(r'\{[\s\w,!=?]+\}',Name.Attribute,'#push'), 				# critères
 			(r'\|[\w:]+',Name.Function),								# filtres
