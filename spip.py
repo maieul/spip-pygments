@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# Maïeul ROUQUETTE 
+# http://geekographie.maieul.net
+# Paternité  - Partage des Conditions Initiales à l'Identique 2.0 France (CC BY-SA 2.0)
+# http://creativecommons.org/licenses/by-sa/2.0/fr/
 from pygments.lexer import RegexLexer,bygroups
 from pygments.token import *
 
