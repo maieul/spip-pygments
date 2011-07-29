@@ -37,7 +37,7 @@ class spipLexer(RegexLexer):
 		
 		'debut_boucle':[
 			('>',Name.Class,'#pop'),									# debut boucle
-			('\([\w]+\)',Name.Variable.Instance),						# type de boucle
+			('\([\w]+[\s]*\??\)',Name.Variable.Instance),						# type de boucle
 			(r'\{',Name.Attribute,'critere'),							#debut d'un critère
 			(r'\s',Name.Class)
 		],
