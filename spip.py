@@ -15,6 +15,7 @@ class SPIPLexer(RegexLexer):
 			(r':>',Literal.String.Other),								# fin chaîne de langue
 			(r'<:[\w]+(:[\w]+)?',Literal.String.Other),					# début chaine
 			(r'\{[#\s\w,!=?<>:]+\}',Name.Attribute,'recur'),				# Critères de boucles et arguments de balises ainsi que de filtres
+			(r'<\/{0,2}B(OUCLE)?[\w]+>',Name.Class)															# Fin de boucle
 			
 			
 		],
