@@ -9,5 +9,7 @@ class SPIPLexer(RegexLexer):
 	tokens = {
 		'root': [
 			(r'#[A-Z_]+\*{0,2}', Keyword),
+			(r'\|[\w]+',Name.Function)
 		]
+		
 	}
