@@ -15,7 +15,7 @@ class spipLexer(RegexLexer):
 		'root': [
 			(r'<BOUCLE[\w]+',Name.Class,'debut_boucle'),								# ouverture de la boucle
 			
-			(r'#[A-Z_]+\*{0,2}', Keyword),								# balises
+			(r'#', Keyword,'balise'),								# balises
 			(r'\|[\w:]+',Name.Function),								# filtres
 			(r'<:[\w]+(:[\w]+)?:>',Literal.String.Other),				# chaînes de langues simple (sans filtres dedans)
 			(r':>',Literal.String.Other),								# fin chaîne de langue
@@ -25,6 +25,14 @@ class spipLexer(RegexLexer):
 			(r'\}',Name.Attribute),										#fin d'un critère
 			(r'.',Text)													#tout ce qui se situe en dehors de boucle, filtre, critère etc.
 
+		],
+		'balise':[
+			(r'(\A:){0}[A-Z_]\*{0,2}',Keyword),							#balise de la boucle courante
+			(r'[\w]+:',Keyword.Type),									#indication de la boucle concernée
+			(r'\{',Name.Attribute,'critere'),							#debut d'un parametre
+			(r'\|[\w:]+',Name.Function),								# filtres
+			(r'.',Text,'#pop'),										#fin de la balise
+			(r'\|[\w:]+',Name.Function),								# filtres	
 		],
 		
 		'debut_boucle':[
