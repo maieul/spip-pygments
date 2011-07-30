@@ -55,10 +55,6 @@ class spipLexer(RegexLexer):
 			(r'\{',Name.Attribute,'critere'),						#debut d'un critères
 			
 
-		],
-		'chaine':[
-			
-
 		]
 		
 	}
