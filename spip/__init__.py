@@ -15,7 +15,7 @@ class spipLexer(RegexLexer):
 	tokens = {
 		'root': [
 			(r'<BOUCLE[\w]+',Name.Class,'debut_boucle'),								# ouverture de la boucle
-			
+			(r'<INCLU(R|D)E+',Name.Class,'debut_boucle'),								# ouverture de la boucle
 			(r'#+', Keyword,'balise'),								# balises
 			(r'\|[\w:]+',Name.Function),								# filtres
 			(r'<:[\w]+(:[\w]+)?:>',Literal.String.Other),				# chaînes de langues simple (sans filtres dedans)
