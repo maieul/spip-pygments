@@ -1,4 +1,10 @@
+[(#SET{image,[(#CHEMIN{mon_logo&.png}
+	|sinon{#CHEMIN{logo.png}}
+	|sinon{#LOGO_SITE_SPIP})]})]
+[<a href="#URL_SITE_SPIP/">(#GET{image}
+	|image_reduire{100})</a>]
 
+? ! &
 #GET{variable, valeur par défaut}
 // risque de mauvaises surprises :
 #BALISE{[(#BALISE|filtre)]}
@@ -17,7 +23,7 @@
 <BOUCLE_nom(NOMS){criteres} {critere ?} {critere==XX} {critere==?xx} {critere==#BALISE|filtre{arg,#BALISE|filtre}}>
 
 
-<BOUCLE_events(ARTICLES ?)	{id_article}{!par date}> ...</BOUCLE_events>
+<BOUCLE_events(ARTICLES ?) {id_article}{!par date}> ...</BOUCLE_events>
 
 #BALISE
 
