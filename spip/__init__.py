@@ -51,7 +51,8 @@ class spipLexer(RegexLexer):
 			(r'<:[\w]+(:[\w]+)?',Literal.String.Other),					# début chaine
 
 			(r'\}',Name.Attribute,'#pop'),								#fin d'un critère
-			(r'[\w=,!\?\'\"\s\[\(\)\]\.\?\!\¡\¿\&\~]+',Name.Attribute),								# contenu simple d'un critères
+			(r'[\w=,!\?\'\"\s\[\(\)\]\.\?\!\¡\¿\&\~]+',Name.Attribute),
+			(r'[\w=,!\?\'\"\s\[\(\)\]\.\?\!\¡\¿\&\~]+|\|',Name.Attribute),								# contenu simple d'un critères
 			(r'\{',Name.Attribute,'critere'),						#debut d'un critères
 			
 

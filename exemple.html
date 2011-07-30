@@ -1,3 +1,10 @@
+[(#SET{valeur,[(#ENV{activer}
+	|is_null|?{#ENV{defaut},#ENV{activer}})]})]
+<input type="radio" name="activer" id="champ_activer_oui"[ (#GET{valeur}|oui)checked='checked'] value='on'  />
+<label for="champ_activer_oui"><:item_oui:></label>
+<input type="radio" name="activer" id="champ_activer_non"[ (#GET{valeur}|non)checked='checked'] value='' />
+<label for="champ_activer_non"><:item_non:></label>
+
 [(#SET{image,[(#CHEMIN{mon_logo&.png}
 	|sinon{#CHEMIN{logo.png}}
 	|sinon{#LOGO_SITE_SPIP})]})]
