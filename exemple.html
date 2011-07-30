@@ -1,3 +1,15 @@
+<BOUCLEx(TABLES){nom ?operateur #ENV{nom}}>
+<BOUCLEx(TABLES){nom ?== ^#ENV{nom}$}>
+<BOUCLEx(TABLES){nom ?!IN #ENV{nom}}>
+<BOUCLEx(TABLES){nom ?LIKE %#ENV{nom}%}>...
+<ul>
+<BOUCLE_art(ARTICLES){date_redac ?< #ENV{date_redac}}{!par date}{0, 10}>
+<li>#TITRE</li>
+</BOUCLE_art>
+<ul>
+<BOUCLEx(TABLES){champ IN a,b,c}>
+<BOUCLEx(TABLES){champ IN #ARRAY{0,a,1,b,2,c}}>
+<BOUCLEx(TABLES){champ IN (#VAL{a:b:c}|explode{:})}>
 <BOUCLE_nom(TABLE){critere1}{critere2} {"<>"}...  {critere n}>
 [(#INCLURE{fond=inc-navigation,inc/nav, id_rubrique})]
 #EVAL{^$GLOBALS['meta']}
