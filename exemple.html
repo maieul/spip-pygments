@@ -1,3 +1,5 @@
+#SET{claire,##ENV{couleur_claire,edf3fe}}
+#SET{foncee,##ENV{couleur_foncee,3874b0}}
 [(#SET{valeur,[(#ENV{activer}
 	|is_null|?{#ENV{defaut},#ENV{activer}})]})]
 <input type="radio" name="activer" id="champ_activer_oui"[ (#GET{valeur}|oui)checked='checked'] value='on'  />
