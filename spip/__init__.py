@@ -5,11 +5,12 @@
 # http://creativecommons.org/licenses/by-sa/2.0/fr/
 from pygments.lexer import RegexLexer,bygroups
 from pygments.token import *
-
+import re
 class spipLexer(RegexLexer):
 	name = 'spip'
 	aliases = ['SPIP','spip']
 	filenames = ['*.html']
+	flags=re.U
 	
 	tokens = {
 		'root': [
