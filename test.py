@@ -9,11 +9,11 @@ from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 from spip import spipLexer
+import codecs
 
-
-code 	= open('exemple.html','r').read()
-output 	= open('output.html','w+')
-output.write('<html><head><style>'+HtmlFormatter().get_style_defs('.highlight')+'</style></head><body>')
+code 	= codecs.open('exemple.html','r','utf-8').read()
+output 	= codecs.open('output.html','w+','utf-8')
+output.write('<html><head>'+'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'+'<style>'+HtmlFormatter().get_style_defs('.highlight')+'</style></head><body>')
 highlight(code, spipLexer(), HtmlFormatter(),output)
 
 output.write('</body></html>')
