@@ -1,3 +1,12 @@
+// risque de mauvaises surprises :
+#BALISE{[(#BALISE|filtre)]}
+// interpretation toujours correcte :
+[(#BALISE{[(#BALISE|filtre)]})]
+// bien que cette ecriture fonctionne en SPIP 2.0, elle n'est pas garantie :
+#BALISE{#BALISE|filtre}
+// l'utilisation d'un filtre exige crochets et parentheses :
+[(#BALISE|filtre)]
+
 <BOUCLEx(TABLE){id_parent}> ...<BOUCLEn(BOUCLEx) />...</BOUCLEx>
 
 <BOUCLE_simple(NOM)>
